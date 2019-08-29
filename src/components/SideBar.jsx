@@ -16,7 +16,7 @@ const SideBar = props => {
   ];
 
   return (
-    <ul className="list-group">
+    <ul className="list-group sidebar">
       {seaMammals.map(mammal => (
         <li
           key={mammal.id}

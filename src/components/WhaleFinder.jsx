@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import SideBar from "./SideBar";
 import WhaleMap from "./WhaleMap";
+import Notice from "./Notice";
 import axios from "axios";
 
 class WhaleFinder extends Component {
@@ -8,8 +9,6 @@ class WhaleFinder extends Component {
     sightings: []
   };
 
-  //  google maps api key
-  //   AIzaSyCtMc04B4UNQSPJ0LbiZqkK7ZtlRFKmBSU
   handleSeaMammalSelect = async mammal => {
     let endpoint =
       "http://hotline.whalemuseum.org/api.json?limit=1000&species=";
@@ -23,10 +22,13 @@ class WhaleFinder extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <div className="main-wrapper">
         <SideBar onMammalSelect={this.handleSeaMammalSelect} />
-        <WhaleMap sightings={this.state.sightings} />
-      </React.Fragment>
+        <div className="right-side">
+          <WhaleMap sightings={this.state.sightings} />
+          <Notice />
+        </div>
+      </div>
     );
   }
 }
