@@ -25,7 +25,14 @@ class WhaleFinder extends Component {
       <div className="main-wrapper">
         <SideBar onMammalSelect={this.handleSeaMammalSelect} />
         <div className="right-side">
-          <WhaleMap sightings={this.state.sightings} />
+          <WhaleMap
+            id="myMap"
+            options={{
+              center: { lat: 48, lng: -124 },
+              zoom: 5
+            }}
+            sightings={this.state.sightings}
+          />
           <Notice />
         </div>
       </div>

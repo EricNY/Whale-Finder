@@ -20,20 +20,22 @@ code {
 
 .sidebar {
   flex: 1 0 0;
+  margin: none;
 }
+/* .sidebar > li {padding: none;} */
 
 .right-side {
   flex: 2 0 0;
-  width: 100%;
+  /* width: 100%; */
   clear: both;
 }
 
 .map {
-  position: relative;
-  height: 400px;
-  width: 600px;
-  margin: auto;
+  position: absolute;
+  margin: 20px 0px;
 }
+
+.map:first-child { position: relative;}
 
 .notice {
   /* width: 100%; */

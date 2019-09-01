@@ -1,84 +1,66 @@
 import React, { Component } from "react";
-import { GoogleMap, Marker } from "react-google-maps";
 
 class WhaleMap extends Component {
   state = {};
+  constructor(props) {
+    super(props);
+    this.onScriptLoad = this.onScriptLoad.bind(this)
+  }
 
-  // onMarkerClick = (props, marker, e) => {
+  onScriptLoad() {
+    var map = new window.google.maps.Map(
+      document.getElementById(this.props.id),
+      this.props.options
+    );
 
-  // };
+    this.setState({map});
+  }
 
-  onMarkerClick = (props, marker, e) => {
-    this.setState({
-      selectedPlace: props,
-      activeMarker: marker,
-      showingInfoWindow: true
+  componentDidMount() {
+    if (!window.google) {
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.src = `https://maps.google.com/maps/api/js?key=AIzaSyCtMc04B4UNQSPJ0LbiZqkK7ZtlRFKmBSU`;
+      var x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+      // Below is important. 
+      //We cannot access google.maps until it's finished loading
+      s.addEventListener('load', e => {
+        this.onScriptLoad()
+      })
+    } else {
+      this.onScriptLoad()
+    }
+  }
+
+  updatePins = sighting =>{
+    var infowindow = new window.google.maps.InfoWindow({
+      content: sighting.description
     });
-  };
 
-  componentDidMount() {}
+    var marker = new window.google.maps.Marker({
+      position: { lat: sighting.latitude, lng: sighting.longitude },
+      map: this.state.map,
+      title: sighting.species
+    });
+    console.log(this.state.map);
+    // marker.addListener('click', function() {
+    //   infowindow.open(this.state.map, marker);
+    // });
+
+  }
 
   render() {
-    const { sightings } = this.props;
-    const mapStyles = {
-      width: "100%",
-      height: "100%"
-    };
-
-    // <p>map goes here</p>;
     return (
-      <div className="map">
-        <Map
-          google={this.props.google}
-          zoom={4}
-          style={mapStyles}
-          initialCenter={{ lat: 48, lng: -122 }}
-        >
-          {sightings.map(sighting => (
-            <Marker
-              key={sighting.id}
-              onClick={this.onMarkerClick}
-              position={{
-                lat: sighting.latitude,
-                lng: sighting.longitude,
-                infowindow: "lll"
-              }}
-            >
-              {true && (
-                <InfoWindow
-                  key="info-#{sighting.id}"
-                  marker={this.state.activeMarker}
-                  visible={true}
-                >
-                  <div>
-                    <p>hihihih</p>
-                  </div>
-                </InfoWindow>
-              )}
-            </Marker>
-          ))}
-        </Map>
-
-        {/* 
-          <Marker
-            onClick={this.onMarkerClick}
-            name={"Dolores park"}
-            position={{ lat: 37.759703, lng: -122.428093 }}
-          >
-            <InfoWindow marker={this.state.activeMarker} visible={true}>
-              <div>
-                <h1>po8765</h1>
-              </div>
-            </InfoWindow>
-          </Marker>
-
-        </Map> */}
-      </div>
+      <div 
+        style={{ width: '75%', height: '90%', margin: '10px auto' }} 
+        id={this.props.id} 
+      >{this.props.sightings.map(sighting => {
+        this.updatePins(sighting);
+      })}</div>
     );
   }
 }
 
-export default GoogleApiWrapper({
-  // apiKey: "AIzaSyCtMc04B4UNQSPJ0LbiZqkK7ZtlRFKmBSU"
-  apiKey: ""
-})(WhaleMap);
+export default WhaleMap;
+// `https://maps.google.com/maps/api/js?key=AIzaSyCtMc04B4UNQSPJ0LbiZqkK7ZtlRFKmBSU`;
