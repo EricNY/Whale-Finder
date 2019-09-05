@@ -35,8 +35,14 @@ code {
   margin: 20px 0px;
 }
 
-.map:first-child { position: relative;}
+.map:first-child {
+  position: relative;
+}
 
 .notice {
-  /* width: 100%; */
+  width: 90%;
+  height: 25%;
+  border-radius: 25px;
+  margin: auto;
+  background-color: rgb(204, 197, 189);
 }
