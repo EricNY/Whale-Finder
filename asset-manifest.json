@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Whale-Finder/static/css/main.e864e8da.chunk.css",
+    "main.css": "/Whale-Finder/static/css/main.0e47c0c1.chunk.css",
     "main.js": "/Whale-Finder/static/js/main.a18c7223.chunk.js",
     "main.js.map": "/Whale-Finder/static/js/main.a18c7223.chunk.js.map",
     "runtime~main.js": "/Whale-Finder/static/js/runtime~main.1cee8ee6.js",
@@ -9,9 +9,9 @@
     "static/js/2.7f68fc25.chunk.js": "/Whale-Finder/static/js/2.7f68fc25.chunk.js",
     "static/js/2.7f68fc25.chunk.js.map": "/Whale-Finder/static/js/2.7f68fc25.chunk.js.map",
     "index.html": "/Whale-Finder/index.html",
-    "precache-manifest.05afa46c0433a3c7b6ecdd9e03e82e3a.js": "/Whale-Finder/precache-manifest.05afa46c0433a3c7b6ecdd9e03e82e3a.js",
+    "precache-manifest.25bc1a5ffcddf298ccc0d1dabe97bd7c.js": "/Whale-Finder/precache-manifest.25bc1a5ffcddf298ccc0d1dabe97bd7c.js",
     "service-worker.js": "/Whale-Finder/service-worker.js",
     "static/css/2.22a7d4ef.chunk.css.map": "/Whale-Finder/static/css/2.22a7d4ef.chunk.css.map",
-    "static/css/main.e864e8da.chunk.css.map": "/Whale-Finder/static/css/main.e864e8da.chunk.css.map"
+    "static/css/main.0e47c0c1.chunk.css.map": "/Whale-Finder/static/css/main.0e47c0c1.chunk.css.map"
   }
 }
