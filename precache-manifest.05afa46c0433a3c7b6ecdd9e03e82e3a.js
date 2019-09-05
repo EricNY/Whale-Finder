@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d7f504ea5f9a39013e22cf4624b60c6b",
+    "revision": "a0d33a8dcfb2e26ce63d57235e8d0da6",
     "url": "/Whale-Finder/index.html"
   },
   {
@@ -8,16 +8,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Whale-Finder/static/css/2.22a7d4ef.chunk.css"
   },
   {
-    "revision": "43f4f41aaf64be2e5034",
-    "url": "/Whale-Finder/static/css/main.e86ca9f3.chunk.css"
+    "revision": "673768c76ac170da84e3",
+    "url": "/Whale-Finder/static/css/main.e864e8da.chunk.css"
   },
   {
     "revision": "47dcd11188febd5aba8e",
     "url": "/Whale-Finder/static/js/2.7f68fc25.chunk.js"
   },
   {
-    "revision": "43f4f41aaf64be2e5034",
-    "url": "/Whale-Finder/static/js/main.d3d886bd.chunk.js"
+    "revision": "673768c76ac170da84e3",
+    "url": "/Whale-Finder/static/js/main.a18c7223.chunk.js"
   },
   {
     "revision": "7cdabf836d279942bea2",
