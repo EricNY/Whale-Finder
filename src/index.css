@@ -41,8 +41,9 @@ code {
 
 .notice {
   width: 90%;
-  height: 25%;
+  height: 30%;
   border-radius: 25px;
   margin: auto;
   background-color: rgb(204, 197, 189);
+  padding: 15px;
 }

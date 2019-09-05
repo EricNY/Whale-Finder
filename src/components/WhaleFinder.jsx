@@ -40,7 +40,7 @@ class WhaleFinder extends Component {
 
   handleSeaMammalSelect = async mammal => {
     let endpoint =
-      "https://hotline.whalemuseum.org/api.json?limit=1000&species=";
+      "https://hotline.whalemuseum.org/api.json?limit=500&species=";
     endpoint += mammal;
 
     axios.get(endpoint).then(res => {
